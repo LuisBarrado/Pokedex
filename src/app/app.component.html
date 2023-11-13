@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+  <h1>SELECCIONA EL TIPO AL QUE QUIERES ACCEDER</h1>
+  <div id="button-container">
+  <button *ngFor="let tipo of tipos" (click)="seleccionarTipo(tipo)">
+    <img src="assets/{{ tipo.tipo }}.jpg" height="50" width="50" alt="{{tipo.tipo}}">
+  </button>
+</div>
+<div id="container">
+  <div *ngIf="tipoSeleccionado">
+  <div id="box" *ngFor="let pokemon of tipoSeleccionado.pokemons" (click)="seleccionarPokemon(pokemon)">
+  <li>
+    <img src="assets/{{ pokemon.nombre }}.jpg" height="5%" width="5%" alt="{{ pokemon.nombre }}">
+  Id: {{pokemon.id}} <br>
+  - Nombre: {{pokemon.nombre}} <br>
+  - Tipo: {{pokemon.tipo}} <br>
+  - Altura:{{pokemon.altura}} <br>
+  - Peso:{{ pokemon.peso }}
+  </li>
+  </div>
+  </div>
+  <div *ngIf="pokemonSeleccionado">
+  <h3>Datos de {{pokemonSeleccionado.nombre}}</h3></div> <!-- Datos del Pokemon Seleccionado --> 
+</div>
+  </body>
+  </html>
+

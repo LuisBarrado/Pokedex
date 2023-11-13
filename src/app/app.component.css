@@ -1,0 +1,17 @@
+
+h1{
+    text-align: center;
+    color: antiquewhite;
+}
+#button-container {
+    display: flex;
+    justify-content: space-around;
+}
+#container{
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+#box{
+    color: antiquewhite;
+}
